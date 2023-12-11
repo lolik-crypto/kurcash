@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+    <div class="container">
+        <div class="section">
+            <ul class="links">
+                <li><a href="{% url 'customer_list' %}">Customers</a></li>
+                <li><a href="{% url 'supplier_list' %}">Suppliers</a></li>
+                <li><a href="{% url 'review_list' %}">Reviews</a></li>
+                <li><a href="{% url 'jewelry_list' %}">Jewelries</a></li>
+            </ul>
+        </div>
+        <div class="footer">
+        </div>
+
+        <div class="section">
+            <h1 class="section-title">Jewelry List</h1>
+            <ul class="jewelry-list">
+                {% for jewelry in jewelries %}
+                    <li>{{ jewelry.name }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+
+        <footer class="footer">
+            <p>&copy; 2023 Jewelry Workshop. All rights reserved.</p>
+        </footer>
+    </div>
+</body>
+</html>
