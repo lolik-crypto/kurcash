@@ -1,34 +1,19 @@
 <!DOCTYPE html>
 {% load static %}
-<html lang="en">
-<head>
-    <body>
-    <meta charset="UTF-8">
-    <title>Title</title>
-     <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
-       <div class="container">
-        <div class="section">
-            <ul class="links">
-                <li><a href="{% url 'customer_list' %}">Customers</a></li>
-                <li><a href="{% url 'supplier_list' %}">Suppliers</a></li>
-                <li><a href="{% url 'review_list' %}">Reviews</a></li>
-                <li><a href="{% url 'jewelry_list' %}">Jewelries</a></li>
-                 <li><a href="{% url 'index' %}">index</a></li>
-            </ul>
-        </div>
-            <div class="footer">
-        </div>
+{% include 'masters.html' %}
+ <title>Обзор</title>
+<ivelir>
+    <div class="features">
+    <h1>Обзор</h1>
+ {% for review in reviews %}
+                   <div class="alert alert-warning ">
+                       <h3>{{review.title}}</h3>
+                      <img src="{{ review.jewelry.image.url }}" alt="{{ jewelry.title }}" style="width:260px">
+                    <p>{{ review.jewelry }} - {{ review.rating }}/10 - {{ review.comment }} </p><button type="button" class="btn btn-sm btn-outline-secondary"><a href="/purchase_page" class="nav-link"><ya-tr-span data-index="7-0" data-translated="true" data-source-lang="en" data-target-lang="ru" data-value="View" data-translation="Перейти к покупке" data-ch="0" data-type="trSpan">Перейти к покупке</ya-tr-span> </a> </button></p></div>
+                       {% endfor %}
 
-            <h1 class="section-title">Review List</h1>
-     <ul>
-  {% for review in reviews %}
-  <li>{{ review.content }}</li>
-  {% endfor %}
-</ul>
-     <footer class="footer">
-            <p>&copy; 2023 Jewelry Workshop. All rights reserved.</p>
-        </footer>
-    </div>
-</head>
+             
+                </div>
+</ivelir>
 </body>
 </html>

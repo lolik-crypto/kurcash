@@ -1,13 +1,14 @@
 from django.urls import path
-from django.urls import path
-from .views import index, masters, customer_list, supplier_list, review_list, jewelry_list
+from . import views
 
 urlpatterns = [
-    path('', index, name='index'),
-    path('master/<int:masterid>/', masters, name='masters'),
-    path('customers/', customer_list, name='customer_list'),
-    path('suppliers/', supplier_list, name='supplier_list'),
-    path('reviews/', review_list, name='review_list'),
-    path('jewelries/', jewelry_list, name='jewelry_list'),
+    path('', views.index, name='index'),
+    path('master/<int:masterid>/', views.masters, name='masters'),
+    path('customers/', views.customer_list, name='customer_list'),
+    path('suppliers/', views.supplier_list, name='supplier_list'),
+    path('reviews/', views.review_list, name='review_list'),
+    path('jewelries/', views.jewelry_list, name='jewelry_list'),
+    path('oformlenie/', views.oformlenie, name='oformlenie'),
+    path('purchase_page/', views.purchase_page, name='purchase_page'),
 
 ]

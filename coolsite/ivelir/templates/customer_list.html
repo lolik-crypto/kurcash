@@ -1,38 +1,23 @@
 <!DOCTYPE html>
 {% load static %}
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-<link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
-       <div class="container">
-        <div class="section">
-            <ul class="links">
-                <li><a href="{% url 'customer_list' %}">Customers</a></li>
-                <li><a href="{% url 'supplier_list' %}">Suppliers</a></li>
-                <li><a href="{% url 'review_list' %}">Reviews</a></li>
-                <li><a href="{% url 'jewelry_list' %}">Jewelries</a></li>
-                 <li><a href="{% url 'index' %}">index</a></li>
-                  <div class="footer">
-        </div>
-            </ul>
-            <h1 class="section-title"> Customer List</h1>
-        </div>
-           <ul>
-  {% for customer in customers %}
-  <li>{{ customer.name }}</li>
-  {% endfor %}
-</ul>
-       </div>
-            <div class="footer">
-        </div>
-
-  <footer class="footer">
-            <p>&copy; 2023 Jewelry Workshop. All rights reserved.</p>
-        </footer>
-
-</head>
-<body>
-
+{% include 'masters.html' %}
+<title>Клиенты</title>
+<ivelir>
+    <div class="customer-box">
+<div class="features">
+    <h1>Клиенты</h1>
+ {% for customer in customers %}
+                   <div class="alert alert-warning ">
+                    <p>{{ customer.name }} - {{ customer.email }} </p>
+                       </div>
+                {% endfor %}
+                </div>
+</div>
+</ivelir>
 </body>
 </html>
+
+
+
+
+

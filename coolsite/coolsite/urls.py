@@ -16,11 +16,18 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-
+from django.conf.urls.static import static
 from ivelir.views import *
+from coolsite import settings
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('ivelir.urls')),
 ]
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 handler404 = pageNotFound
+handler500 = server_error_handler
+handler403 = forbidden_error_handler
+handler303 = not_modified_error_handler
+handler302 = redirect_error_handler

@@ -1,16 +1,22 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-    <h1>Supplier List</h1>
-<ul>
-  {% for supplier in suppliers %}
-  <li>{{ supplier.name }}</li>
-  {% endfor %}
-</ul>
-</head>
-<body>
-
+{% load static %}
+{% include 'masters.html' %}
+ <title>Поставщики</title>
+<ivelir>
+    <div class="customer-box">
+<div class="features">
+    <h1>Поставщики</h1>
+ {% for supplier in suppliers %}
+                   <div class="alert alert-warning ">
+                    <p>{{ supplier.name }} </p>
+                       <p> {{ supplier.email }}</p>
+                       </div>
+                {% endfor %}
+                </div>
+</div>
+</ivelir>
 </body>
 </html>
+
+
+
