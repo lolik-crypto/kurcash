@@ -16,7 +16,6 @@ class Jewelry(models.Model):
 class Customer(models.Model):
     name = models.CharField(max_length=100)
     email = models.EmailField(unique=True)
-
 class Supplier(models.Model):
     name = models.CharField(max_length=100)
     email = models.EmailField(unique=True)
@@ -26,6 +25,7 @@ class Review(models.Model):
     jewelry = models.ForeignKey(Jewelry, on_delete=models.CASCADE)
     rating = models.IntegerField()
     comment = models.TextField()
+
 class User(models.Model):
     name = models.CharField(max_length=100)
     email = models.EmailField()

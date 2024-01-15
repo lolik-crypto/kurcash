@@ -9,7 +9,7 @@
                    <div class="alert alert-warning ">
                        <h3>{{review.title}}</h3>
                       <img src="{{ review.jewelry.image.url }}" alt="{{ jewelry.title }}" style="width:260px">
-                    <p>{{ review.jewelry }} - {{ review.rating }}/10 - {{ review.comment }} </p><button type="button" class="btn btn-sm btn-outline-secondary"><a href="/purchase_page" class="nav-link"><ya-tr-span data-index="7-0" data-translated="true" data-source-lang="en" data-target-lang="ru" data-value="View" data-translation="Перейти к покупке" data-ch="0" data-type="trSpan">Перейти к покупке</ya-tr-span> </a> </button></p></div>
+                    <p>{{ review.jewelry.title }} - {{ review.rating }}/10 - {{ review.comment }} </p></div>
                        {% endfor %}
 
              

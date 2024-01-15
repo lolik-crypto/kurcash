@@ -4,7 +4,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Оформление покупки</title>
+    <title>Добавление отзыва</title>
     <style>
         body {
             background-color: #dddddd;
@@ -23,7 +23,7 @@
             margin: 0 0 20px;
         }
         .btn {
-            padding: 10px 30px;
+            padding: 5px 30px;
             background-color: #3cb371;
 
             color: #ffffff;
@@ -45,6 +45,7 @@
         }
         .user-item p {
             margin: 0;
+
         }
         hr {
             margin: 10px 0;
@@ -57,30 +58,34 @@
         }
          .user-list {
             margin-top: 30px;
+
         }
     </style>
 </head>
 <body>
 <div class="form">
-    <h3>Оформление покупки</h3>
+    <h3>Добавление отзыва</h3>
     <form method="POST" action="{% url 'purchase_page' %}">
         {% csrf_token %}
         {{ form.as_p }}
-        <button class="btn " type="submit">Купить</button>
+        <button class="btn" type="submit">Оставить отзыв</button>
     </form>
 
     <div class="user-list">
-        <h3>Наши покупатели</h3>
+        <h3>Ваши отзывы</h3>
         {% for user in users %}
             <div class="user-item">
-                <p>Имя: {{ user.name }}</p>
+                <p>Ваш отзыв: {{ user.name }}</p>
                 <p>Email: {{ user.email }}</p>
             </div>
             <hr>
+
         {% empty %}
             <p class="no-users">Нет пользователей</p>
         {% endfor %}
     </div>
+            <a href="{% url 'index' %}"><li><i class="bi bi-house-door"></i> Вернуться на главную </li></a>
+
 </div>
 </body>
 </html>
